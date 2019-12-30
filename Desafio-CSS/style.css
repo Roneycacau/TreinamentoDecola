@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+    padding: 20px;
+    background: darkblue;
+    color:#fff;
+    font-weight: bold;
+    border: #335599 solid 5px;
+    border-bottom: #112244 solid 5px;
+    border-radius: 15px;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+}
+li{
+    list-style: none;
+}
+h1{
+    padding: 20px 0 20px 0;
+    text-align: center;
+    font-size: 5rem;
+}
+nav.menu ul{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}

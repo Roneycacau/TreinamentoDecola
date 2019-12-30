@@ -1,0 +1,25 @@
+textarea{
+    width: 28em;
+    height: 80px;
+    padding: 5px;
+}
+
+fieldset{
+    margin-right: 50em;
+    margin-bottom: 1em;
+    padding: 20px;
+}
+input, select{
+    margin: 0.2em;
+}
+.labelForm{
+    display: inline-block;
+    width: 5em;
+    text-align: right;
+}
+#iArea{
+    margin-top: 1em
+}
+button{
+    margin-right: 1em;
+}

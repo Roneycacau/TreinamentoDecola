@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class='board'></div>
+    <button class="btn" onclick="game.startGame()" title="Restart this game">Restart</button>
+
+    <script src="TicTacToe.js"></script>
+    <script>
+        game.init(document.querySelector('.board'));
+        game.startGame();
+    </script>
+
+</body>
+
+</html>

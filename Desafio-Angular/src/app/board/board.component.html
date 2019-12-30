@@ -1,0 +1,18 @@
+<div class="main" [class.winner]="this.gameService.draw">
+  <div
+    *ngFor="let square of gameService.board; let i = index"
+    class="board"
+    id="ID{{ i }}"
+    (click)="play(i)"
+    [class.winner]="
+      i === this.gameService.win[0] ||
+      i === this.gameService.win[1] ||
+      i === this.gameService.win[2]
+    "
+  >
+    <p>
+      {{ square }}
+    </p>
+  </div>
+</div>
+<button class="btn" (click)="restart()">Restart</button>

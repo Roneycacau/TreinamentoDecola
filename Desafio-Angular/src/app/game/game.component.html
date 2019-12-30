@@ -1,0 +1,11 @@
+<div class="main">
+  <div
+    *ngFor="let square of board; let i = index"
+    class="board"
+    (click)="play(i)"
+  >
+    <p>
+      {{ square }}
+    </p>
+  </div>
+</div>

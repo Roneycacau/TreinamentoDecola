@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <form name="form" action="">
+    <fieldset name="dadosPessoais">
+      <legend>Dados pessoais</legend>
+
+      <label for="name" id="nameLabel" class="labelForm">Nome: </label>
+      <input type="text" id="name" class="inputText" /><br> 
+
+      <label for="address" id="addressLabel" class="labelForm">Endereço: </label>
+      <input type="text" id="address" class="inputText"><br>
+
+      <label for="city" id="cityLabel" class="labelForm">Cidade: </label>
+      <input type="text" name="name" id="name" class="inputText"><br>
+
+      <label for="state" class="labelForm">Estado: </label>
+      <select id="state" name="estado">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+        <option disabled selected value>--SELECIONE--</option>
+      </select>
+    </fieldset>
+    <fieldset name="dadosProfissionais">
+      <legend>Dados profissionais</legend>
+      <label for="positionNature" class="labelFormProf">Natureza do Cargo</label><br>
+
+      <input type="radio" name="positionNature" id="manager">
+      <label for="manager">Gerência</label>
+
+      <input type="radio" name="positionNature" id="finance">
+      <label for="finance">Financeiro</label>
+
+      <input type="radio" name="positionNature" id="reception">
+      <label for="reception">Recepção</label>
+
+      <input type="radio" name="positionNature" id="admin">
+      <label for="admin">Administração</label>
+
+      <input type="radio" name="positionNature" id="legalDivision">
+      <label for="legalDivision">Jurídico</label>
+      <br>
+      <br>
+      
+      <label for="interestArea" class="labelFormProf" id="iArea">Área de Interesse</label><br>
+      
+      <input type="checkbox" name="interestArea" id="computing">
+      <label for="computing">Computação</label>
+      
+      <input type="checkbox" name="interestArea" id="biology">
+      <label for="biology">Biologia</label>
+      
+      <input type="checkbox" name="interestArea" id="environment">
+      <label for="environment">Meio Ambiente</label>
+      
+      <input type="checkbox" name="interestArea" id="engineering">
+      <label for="engineering">Engenharia</label>
+      
+      <input type="checkbox" name="interestArea" id="history">
+      <label for="history">História</label>
+      <br>
+      <label for="curriculum" class="labelFormProf">Mini-Currículo</label>
+      <textarea name="curriculum" id="curriculum">
+      </textarea>
+    </fieldset>
+    <button type="submit" name="submit" value="send">Enviar</button>
+    <button type="reset" name="reset" value="clean">Limpar</button>
+    
+  </form>
+</body>
+
+</html>
