@@ -2,6 +2,9 @@ package com.DBFirst.projetoEventos.domain.dto.response;
 
 import java.util.Date;
 
+import com.DBFirst.projetoEventos.domain.entities.CategoriaEvento;
+import com.DBFirst.projetoEventos.domain.entities.StatusEvento;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,8 +16,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class EventoResponse {
     private Integer id;
-    private StatusEventoResponse status;
-    private CategoriaEventoResponse categoria;
+    private StatusEvento status;
+    private CategoriaEvento categoria;
     private String nome;
     private Date inicio;
     private Date fim;

@@ -68,38 +68,42 @@ public class EventoService {
         event.set(Calendar.MINUTE, 0);
         event.set(Calendar.SECOND, 0);
         event.set(Calendar.MILLISECOND, 0);
-        return today.equals(event);
+        return today.getTimeInMillis() == event.getTimeInMillis();
     }
 
     public Evento deleteEvento(Integer id) {
         Evento currentEvento = findById(id);
 
-        if (!compareDateInZeroHour(currentEvento.getInicio()) && currentEvento.getStatus().getId() < 3) {
-            currentEvento.setStatus(eventoStatusService.findById(4));
-
-            return eventoRepository.save(currentEvento);
+        if (!compareDateInZeroHour(currentEvento.getInicio())) {
+            if (currentEvento.getStatus().getId() < 3) {
+                currentEvento.setStatus(eventoStatusService.findById(4));
+                return eventoRepository.save(currentEvento);
+            } else {
+                throw new BusinessRuleFail("Evento só pode ser cancelado se ainda estiver Aberto");
+            }
         } else {
-            Optional<Evento> evento = eventoRepository.findById(0);
-            return evento.orElseThrow(() -> new DataNotFoundException(
-                    "Evento não pode ser cancelado no mesmo dia que a data Inicio. E apenas se ainda estiver Aberto"));
+            throw new BusinessRuleFail("Evento não pode ser cancelado no mesmo dia que a data Inicio.");
         }
     }
 
     public Evento startEvento(Integer id) {
         Evento currentEvento = findById(id);
-        if (compareDateInZeroHour(currentEvento.getInicio()) && currentEvento.getStatus().getId() == 1) {
-            currentEvento.setStatus(eventoStatusService.findById(4));
-            currentEvento.setStatus(eventoStatusService.findById(2));
-            return eventoRepository.save(currentEvento);
+        if (compareDateInZeroHour(currentEvento.getInicio())) {
+            if (currentEvento.getStatus().getId() == 1) {
+                /* currentEvento.setStatus(eventoStatusService.findById(4)); */
+                currentEvento.setStatus(eventoStatusService.findById(2));
+                return eventoRepository.save(currentEvento);
+            } else {
+                throw new BusinessRuleFail("O evento só pode ser iniciado se ainda estiver Aberto");
+            }
         } else {
-            throw new BusinessRuleFail(
-                    "O evento só pode ser iniciado no mesmo dia da Data de Inicio E apenas se ainda estiver Aberto");
+            throw new BusinessRuleFail("O evento só pode ser iniciado no mesmo dia da Data de Inicio");
         }
     }
 
     public Evento endEvento(Integer id) {
         Evento currentEvento = findById(id);
-        if (compareDateInZeroHour(currentEvento.getInicio()) && currentEvento.getStatus().getId() == 2) {
+        if (currentEvento.getStatus().getId() == 2) {
             currentEvento.setStatus(eventoStatusService.findById(3));
             return eventoRepository.save(currentEvento);
         } else {

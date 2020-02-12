@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProjetoEventosApplication<projetoEventos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.DBFirst.projetoEventos.ProjetoEventosApplication",
+            "projectName": "projetoEventos",
+            "args": ""
+        }
+    ]
+}
